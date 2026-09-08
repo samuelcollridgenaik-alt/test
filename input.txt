@@ -1,0 +1,3 @@
+Hello! This is a sample text file.
+Node.js can read this file and write its contents to another file.
+This is a simple file handling example.

@@ -31,54 +31,7 @@ const movies = [
     { id: 12, title: "Pride and Prejudice", genre: "Romance" },
 ]
 
-function handleQuery(req, res, next) {
-    const item = req.query.genre.toLowerCase()
-
-    movies.forEach(movie => {
-        if (movie.genre.toLowerCase() == item) {
-            next()
-            return;
-        }
-    })
-    res.send("<h1>This genre is not in the movie list</h1>")
-}
-
-function searchMovie(req, res) {
-    const item = req.query.genre.toLowerCase()
-    let results = []
-
-    movies.forEach((movie) => {
-        if (movie.genre.toLowerCase() === item) {
-            results.push(movie.title)
-        }
-    })
-
-    let html = `<h1>Movies searched for the genre ${item}</h1><ul>`
-    results.forEach((title) => {
-        html += `<li>${title}</li>`
-    })
-    html += `</ul>`
-    res.send(html)
-}
-
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "templates/index.html"))
-})
-    
-app.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, "templates/about.html"))
-})
-
-app.get("/newmovie", (req, res) => {
-    res.sendFile(path.join(__dirname, "templates/newmovie.html"))
-})
-
-app.get("/contact", (req, res) => {
-    res.sendFile(path.join(__dirname, "templates/contact.html"))
-})
-app.get("/search", handleQuery, searchMovie)
-    
-// Add the code below this line.
+// Add code here.
 
 
 
